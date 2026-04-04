@@ -1,0 +1,16 @@
+{
+  "name": "embed-book-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev .",
+    "docs:fix-links": "node scripts/docs-tools.mjs fix-links",
+    "docs:check-links": "node scripts/docs-tools.mjs check-links",
+    "docs:build": "npm run docs:check-links && vitepress build .",
+    "docs:preview": "vitepress preview ."
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}
+
