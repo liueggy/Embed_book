@@ -1,53 +1,46 @@
-**推荐读物：**
+# 参考书与资料
 
-《C和指针第二版》
+这一页用于集中整理嵌入式学习过程中常见的书籍、资料和补充下载入口。建议把它作为“延伸阅读索引”，而不是主线学习入口。
 
-《LinuxC编程一站式学习》
+## 使用建议
 
-《STC89C52数据手册》
+- 如果你正在系统学习，优先沿着主章节内容阅读。
+- 如果你希望补背景、查资料或找电子书，再回到本页按主题选择。
+- 对 PDF、网盘资料应以检索和补充阅读为主，不建议替代主线笔记本身。
 
-《STM32不完全手册库函数版》
+## 推荐读物
 
-《cortexM3权威指南》
+- 《C 和指针》
+- 《Linux C 编程一站式学习》
+- 《STC89C52 数据手册》
+- 《STM32 不完全手册（库函数版）》
+- 《Cortex-M3 权威指南》
+- 《STM32F10 中文参考手册》
+- 《FreeRTOS 源码详解与应用开发：基于 STM32》
+- 《跟我一起写 Makefile》
+- 《UNIX 环境高级编程》
+- 《深入理解 Linux 内核》
+- 《TCP/IP 详解》
 
-《STM32F10中文参考手册》
+## 仓库内 PDF 资料
 
-《FreeRTOS源码详解与应用开发 基于STM32》
+- [Arm64 指令集快速查找表](./Arm64%20%E6%8C%87%E4%BB%A4%E9%9B%86%E5%BF%AB%E9%80%9F%E6%9F%A5%E6%89%BE%E8%A1%A8%28ARMv8%20A64%20Quick%20Reference%29.pdf)
+- [Linux 初学者入门优秀教程](./Linux%E5%88%9D%E5%AD%A6%E8%80%85%E5%85%A5%E9%97%A8%E4%BC%98%E7%A7%80%E6%95%99%E7%A8%8B.pdf)
+- [Shell 命令行操作](./Shell%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C.pdf)
 
-《跟我一起写Makefile》
+## 百度网盘资源
 
-《UNIX环境高级编程》
+更多电子书和整理资料可通过以下网盘入口获取：
 
-《深入理解LINUX内核_第3版》
+- [百度网盘下载入口](https://pan.baidu.com/s/1ZNIpG7bVxzgVxD_ySkxZ0g?pwd=tex9)
+- 提取码：`tex9`
 
-《UNIX环境高级编程》
+如网页扫码更方便，可使用下方二维码：
 
-《TCPIP详解卷》
+![books 资源二维码](https://github.com/user-attachments/assets/30cf244b-9284-4c10-b14c-1e80f3242c3a)
 
-#### 因仓库容量限制，更多电子书资源在百度网盘：[点击这里下载](https://pan.baidu.com/s/1ZNIpG7bVxzgVxD_ySkxZ0g?pwd=tex9)提取码: tex9 
----
+## 补充说明
 
-或扫描二维码![image](https://github.com/user-attachments/assets/30cf244b-9284-4c10-b14c-1e80f3242c3a)
-
----
-6.19 补充
-通过网盘分享的文件：电子书汇总.rar
-链接: https://pan.baidu.com/s/1ZNIpG7bVxzgVxD_ySkxZ0g?pwd=tex9 提取码: tex9 
-
-> 资源全面无套路，只求star一下本项目，让更多需要的人可以学习！  
-> 如果资源失效请第一时间 issue 或通过邮箱联系我！
-
-![image](https://github.com/user-attachments/assets/8fa5af26-2bab-4bbd-9c90-e4b56bb59452)
-
-![image](https://github.com/user-attachments/assets/cbbf6891-7ab4-4210-874c-68a7be513260)
-
-![image](https://github.com/user-attachments/assets/d200e02e-51d8-4e07-89cf-f3293390485c)
-
-![image](https://github.com/user-attachments/assets/825cca3c-0286-4387-b1d4-fb1aa11153dd)
-
-![image](https://github.com/user-attachments/assets/29c04230-7205-490c-8767-95d854109d8c)
-
-![image](https://github.com/user-attachments/assets/a6f0ee1d-0c8e-4de3-927d-bc0b750ff55b)
-
-![image](https://github.com/user-attachments/assets/b747e0e9-36e2-4fff-99bf-342630c52a41)
-
+- 电子书和资料适合在遇到具体知识点时配合查阅。
+- 芯片手册、编程指南、协议文档等一手资料优先级通常高于二手总结。
+- 若资料失效，可通过 issue 或仓库联系方式反馈。
