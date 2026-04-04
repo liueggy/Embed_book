@@ -284,22 +284,35 @@ function normalizeLink(fromFile, rawTarget) {
 
 function processMarkdownFile(filePath, mode) {
   const original = fs.readFileSync(filePath, 'utf8');
-  let nextContent = original;
   const brokenLinks = [];
+  let inFence = false;
+  const nextContent = original
+    .split(/\r?\n/)
+    .map((line) => {
+      if (/^\s*```/.test(line)) {
+        inFence = !inFence;
+        return line;
+      }
 
-  nextContent = nextContent.replace(INTERNAL_LINK_RE, (fullMatch, text, target) => {
-    const normalized = normalizeLink(filePath, target);
-    if (normalized.broken) {
-      brokenLinks.push(target);
-      return fullMatch;
-    }
+      if (inFence) {
+        return line;
+      }
 
-    if (!normalized.changed) {
-      return fullMatch;
-    }
+      return line.replace(INTERNAL_LINK_RE, (fullMatch, text, target) => {
+        const normalized = normalizeLink(filePath, target);
+        if (normalized.broken) {
+          brokenLinks.push(target);
+          return fullMatch;
+        }
 
-    return `[${text}](${normalized.nextTarget})`;
-  });
+        if (!normalized.changed) {
+          return fullMatch;
+        }
+
+        return `[${text}](${normalized.nextTarget})`;
+      });
+    })
+    .join('\n');
 
   const changed = nextContent !== original;
   if (mode === 'fix' && changed) {

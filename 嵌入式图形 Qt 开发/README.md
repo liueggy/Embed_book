@@ -13,7 +13,6 @@
 ### （二）嵌入式开发典型场景
 覆盖工业控制（人机界面HMI）、医疗设备（便携式诊断仪界面）、汽车电子（车载信息娱乐系统IVI）、智能家居（智能家电控制面板）、手持终端（工业PDA、POS机）等领域，成为嵌入式GUI开发首选框架。  
 
-
 ## 二、环境搭建与工具链
 ### （一）开发环境搭建
 1. **宿主环境**  
@@ -36,7 +35,6 @@ make - j$(nproc)
 make install
 ```  
 编译后，生成适配目标平台的Qt库，用于嵌入式应用开发。  
-
 
 ## 三、核心机制与基础开发
 ### （一）信号与槽机制
@@ -66,7 +64,6 @@ connect(btn, &QPushButton::clicked, led, &LedControl::toggleLed);
 - `QSlider`：调节设备参数（音量、亮度），通过`valueChanged`信号实时同步硬件状态。  
 2. **自定义控件**  
 针对嵌入式外设（如旋钮、仪表盘），继承`QWidget`/`QQuickItem`开发自定义控件，复用Qt绘图系统（`QPainter`/`QSGNode`）实现硬件状态可视化。  
-
 
 ## 四、嵌入式功能开发模块
 ### （一）定时器（QTimer）
@@ -133,7 +130,6 @@ signals:
 QThreadPool::globalInstance()->start(new SerialWorker());
 ```  
 
-
 ## 五、嵌入式外设交互开发
 ### （一）多媒体应用开发
 1. **音频播放**  
@@ -195,7 +191,6 @@ if (serial->open(QIODevice::ReadWrite)) {
 }
 ```  
 
-
 ## 六、进阶优化与平台适配
 ### （一）性能优化策略
 1. **资源裁剪**  
@@ -219,7 +214,6 @@ if (serial->open(QIODevice::ReadWrite)) {
 2. **应用部署**  
 - 使用`linuxdeployqt`工具打包Qt应用及依赖库，生成独立可执行包，适配不同嵌入式系统。  
 - 通过Yocto Project、Buildroot将Qt应用集成到系统镜像，实现出厂预装。  
-
 
 ## 七、生态与学习资源
 ### 官方资源

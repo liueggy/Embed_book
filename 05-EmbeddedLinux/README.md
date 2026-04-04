@@ -1,20 +1,20 @@
 
 
-# 🟢 第五层：嵌入式 Linux 开发基础
+# 第五层：嵌入式 Linux 开发基础
 
 嵌入式 Linux 是物联网、智能设备、工业控制等领域的核心技术之一。本层重点掌握从 Bootloader 到驱动的开发过程，理解 Linux 系统构成及其移植方法。
 
 ---
 
-## 🔹 嵌入式 Linux 系统概览
+## 嵌入式 Linux 系统概览
 
-### 📌 嵌入式 Linux 特点
+### 嵌入式 Linux 特点
 
 - 可裁剪、可定制、模块化强
 - 支持多种架构（ARM、MIPS、RISC-V 等）
 - 社区支持强大（开源内核、驱动丰富）
 
-### 📌 系统组成
+### 系统组成
 
 ```text
 [Bootloader] → [Kernel] → [Root File System] → [User Application]
@@ -27,9 +27,9 @@
 
 ---
 
-## 🔹 启动流程详解
+## 启动流程详解
 
-### 📌 通用启动流程
+### 通用启动流程
 
 ```text
 Power On →
@@ -42,7 +42,7 @@ Power On →
               Shell / App
 ```
 
-### 📌 U-Boot（主流 Bootloader）
+### U-Boot（主流 Bootloader）
 
 - 二阶段：SPL（初始化内存）+ U-Boot 本体
 - 功能：串口输出、TFTP 下载、引导内核、环境变量配置等
@@ -55,15 +55,15 @@ bootz 0x80008000 - 0x83000000
 
 ---
 
-## 🔹 设备树（Device Tree）
+## 设备树（Device Tree）
 
-### 📌 基本概念
+### 基本概念
 
 - 描述硬件资源的结构化信息
 - 独立于内核源码，提高可移植性
 - 文件类型：`.dts`（源文件）、`.dtsi`（包含文件）、`.dtb`（二进制）
 
-### 📌 示例结构
+### 示例结构
 
 ```dts
 uart1: serial@40011000 {
@@ -74,7 +74,7 @@ uart1: serial@40011000 {
 };
 ```
 
-### 📌 编译设备树
+### 编译设备树
 
 ```bash
 make ARCH=arm CROSS_COMPILE=arm-linux- dtbs
@@ -157,9 +157,9 @@ done
 
 ---
 
-## 🔹 Linux 驱动开发模型
+## Linux 驱动开发模型
 
-### 📌 驱动分层模型
+### 驱动分层模型
 
 ```text
 [硬件设备] ←→ [总线] ←→ [Device] ←→ [Driver] ←→ [内核]
@@ -169,7 +169,7 @@ done
 - **设备（device）**：描述具体外设
 - **驱动（driver）**：实现对设备的控制逻辑
 
-### 📌 字符设备驱动框架
+### 字符设备驱动框架
 
 ```c
 struct file_operations fops = {
@@ -182,7 +182,7 @@ struct file_operations fops = {
 int major = register_chrdev(0, "mydev", &fops);
 ```
 
-### 📌 平台驱动开发流程
+### 平台驱动开发流程
 
 1. 定义 `platform_device`
 2. 编写并注册 `platform_driver`
@@ -191,15 +191,15 @@ int major = register_chrdev(0, "mydev", &fops);
 
 ---
 
-## 🔹 根文件系统构建
+## 根文件系统构建
 
-### 📌 常见文件系统类型
+### 常见文件系统类型
 
 - ext3/ext4：标准 Linux 文件系统
 - squashfs：只读压缩文件系统，适合嵌入式
 - initramfs：内存文件系统
 
-### 📌 文件系统布局（典型）
+### 文件系统布局（典型）
 
 ```
 /
@@ -215,7 +215,7 @@ int major = register_chrdev(0, "mydev", &fops);
 └── home/      → 用户主目录
 ```
 
-### 📌 构建方式
+### 构建方式
 
 - BusyBox + 自制文件结构
 - Buildroot：快速构建定制系统
@@ -223,9 +223,9 @@ int major = register_chrdev(0, "mydev", &fops);
 
 ---
 
-## 🔹 工具链与调试手段
+## 工具链与调试手段
 
-### 📌 交叉编译工具链
+### 交叉编译工具链
 
 - gcc-arm-linux-gnueabi
 - arm-none-eabi-gcc
@@ -234,7 +234,7 @@ int major = register_chrdev(0, "mydev", &fops);
 export CROSS_COMPILE=arm-linux-
 ```
 
-### 📌 GDB 调试
+### GDB 调试
 
 - GDB Server + Remote Debug
 ```bash
@@ -242,7 +242,7 @@ gdb-multiarch vmlinux
 target remote :1234
 ```
 
-### 📌 常用调试工具
+### 常用调试工具
 
 | 工具        | 用途                       |
 |-------------|----------------------------|
@@ -255,7 +255,7 @@ target remote :1234
 
 ---
 
-## 🔹 常见开发平台
+## 常见开发平台
 
 | 平台        | 特点                         |
 |-------------|------------------------------|
@@ -266,7 +266,7 @@ target remote :1234
 
 ---
 
-### 🔹 嵌入式系统安全基础
+### 嵌入式系统安全基础
 1. 威胁模型分析
 - 物理攻击：
   - 探针访问调试接口（JTAG/SWD）读取 Flash 内容。
@@ -293,7 +293,7 @@ target remote :1234
 
 ---
 
-### 🔹 安全启动（Secure Boot）
+### 安全启动（Secure Boot）
 
 > 保证启动时加载的固件是可信的
 
@@ -356,7 +356,7 @@ HAL_MPU_ConfigRegion(&MPU_InitStruct);
 
 ---
 
-### 🔹 固件加密与防逆向
+### 固件加密与防逆向
 
 1. **AES 加密固件**，防止泄露源码逻辑
 
@@ -384,10 +384,9 @@ HAL_MPU_ConfigRegion(&MPU_InitStruct);
 
 用等效指令序列替换关键操作（如a+b替换为a-(-b)）。
 
-
 ---
 
-### 🔹 权限隔离与防护
+### 权限隔离与防护
 
 1. MPU（内存保护单元）配置
 ```c
@@ -433,7 +432,7 @@ uint32_t SecureService_Call(uint32_t service_id, uint32_t param1, uint32_t param
 
 ---
 
-### 🔹 Bootloader 开发建议
+### Bootloader 开发建议
 
 - 通用功能：下载、校验、重启、回滚
 - 支持双分区升级（Slot A / Slot B）
@@ -442,6 +441,6 @@ uint32_t SecureService_Call(uint32_t service_id, uint32_t param1, uint32_t param
 
 ---
 
-## 🔚 小结
+## 小结
 
 嵌入式 Linux 是从单片机迈向高性能系统开发的核心门槛，掌握其启动流程、设备树结构与驱动框架是后续学习内核裁剪、系统移植与 IoT 平台开发的基础。

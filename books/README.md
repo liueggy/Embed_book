@@ -34,7 +34,6 @@
 通过网盘分享的文件：电子书汇总.rar
 链接: https://pan.baidu.com/s/1ZNIpG7bVxzgVxD_ySkxZ0g?pwd=tex9 提取码: tex9 
 
-
 > 资源全面无套路，只求star一下本项目，让更多需要的人可以学习！  
 > 如果资源失效请第一时间 issue 或通过邮箱联系我！
 
@@ -51,5 +50,4 @@
 ![image](https://github.com/user-attachments/assets/a6f0ee1d-0c8e-4de3-927d-bc0b750ff55b)
 
 ![image](https://github.com/user-attachments/assets/b747e0e9-36e2-4fff-99bf-342630c52a41)
-
 

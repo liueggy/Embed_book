@@ -1,11 +1,11 @@
 
-# 🟣 第四层：实时操作系统（RTOS）
+# 第四层：实时操作系统（RTOS）
 
 本模块介绍嵌入式 RTOS（如 FreeRTOS）的基础知识、任务调度机制、资源管理方式以及在实际项目中的使用模式。
 
 ---
 
-## 🔹 RTOS 基础概念
+## RTOS 基础概念
 
 ### 什么是 RTOS？
 **RTOS**（Real-Time Operating System）是用于嵌入式设备中的轻量级操作系统，能提供任务调度、时间管理、资源管理等功能。  
@@ -18,7 +18,6 @@
 - 可抢占内核（Preemptive Kernel）：
   - 高优先级任务可立即抢占低优先级任务。
   - 示例：飞行控制系统中，传感器数据采集任务优先级高于显示任务。
-
 
 ### 常见 RTOS
 - FreeRTOS（开源、广泛使用）
@@ -37,15 +36,14 @@
 **主流 RTOS 对比**
 | RTOS       | 开源     | 应用领域                 | 特点                                         |
 |------------|----------|--------------------------|----------------------------------------------|
-| FreeRTOS   | ✅       | 工业控制、消费电子       | 轻量级、广泛支持、文档完善                  |
-| RT-Thread  | ✅       | 物联网、智能家居         | 国产、组件丰富（如文件系统、GUI）           |
-| μC/OS      | ⚠️ 商用需授权 | 航空航天、医疗设备        | 支持安全认证（如 DO-178C）、稳定可靠        |
-| VxWorks    | ❌       | 国防、通信、航天         | 商业闭源、高可靠性、实时性能强              |
-
+| FreeRTOS   |        | 工业控制、消费电子       | 轻量级、广泛支持、文档完善                  |
+| RT-Thread  |        | 物联网、智能家居         | 国产、组件丰富（如文件系统、GUI）           |
+| μC/OS      |  商用需授权 | 航空航天、医疗设备        | 支持安全认证（如 DO-178C）、稳定可靠        |
+| VxWorks    |        | 国防、通信、航天         | 商业闭源、高可靠性、实时性能强              |
 
 ---
 
-## 🔹 任务管理
+## 任务管理
 
 ### 任务创建与内存布局
 ```c
@@ -75,7 +73,6 @@ xTaskCreate(vTaskFunction, "Task1", 256, NULL, 2, NULL);
                   或挂起API
 ```
 
-
 ### 任务优先级与调度算法
 - 抢占式调度：
   - 基于任务优先级，高优先级任务可立即抢占当前运行任务。
@@ -87,7 +84,7 @@ xTaskCreate(vTaskFunction, "Task1", 256, NULL, 2, NULL);
 
 ---
 
-## 🔹 时间管理
+## 时间管理
 
 ### 任务延时实现
 ```c
@@ -125,7 +122,7 @@ void vTimerCallback(TimerHandle_t xTimer) {
 
 ---
 
-## 🔹 线程间通信
+## 线程间通信
 
 ### 队列（Queue）
 - 特性：
@@ -253,7 +250,6 @@ if (xQueueReceive(xMessageQueue, &xReceivedMessage, portMAX_DELAY) == pdTRUE) {
 | 适用场景     | 简单数据传输（如 ADC 值）        | 复杂命令传递（如协议解析、任务通信）       |
 | 内存效率     | 每次传输都需拷贝数据             | 可传递指针，减少内存拷贝，效率更高         |
 
-
 ### 事件组（Event Group）
 - 类似标志位，可用于多任务同步
 ```c
@@ -275,7 +271,7 @@ EventBits_t uxBits = xEventGroupWaitBits(
 
 ---
 
-## 🔹 资源管理
+## 资源管理
 
 ### 内存管理方式
 #### 静态分配（推荐）
@@ -335,7 +331,6 @@ if (pvBuffer == NULL) {
 }
 ```
 
-
 ### 临界区保护
 - 关中断：
 ```c
@@ -358,7 +353,7 @@ xSemaphoreGive(xMutex);  // 释放锁
 
 ---
 
-## 🔹 FreeRTOS 配置与移植
+## FreeRTOS 配置与移植
 
 ### 配置项（FreeRTOSConfig.h）
 | 参数                          | 描述                              | 示例值             |
@@ -368,7 +363,6 @@ xSemaphoreGive(xMutex);  // 释放锁
 | `configMAX_PRIORITIES`        | 最大任务优先级数                  | `5 ~ 32`           |
 | `configMINIMAL_STACK_SIZE`    | 最小任务栈大小（以字为单位）      | `128`（STM32）     |
 | `configSUPPORT_DYNAMIC_ALLOCATION` | 是否支持动态内存分配           | `1`（支持）        |
-
 
 ### 移植步骤
 1. 提供 SysTick 定时器实现
@@ -405,7 +399,7 @@ PendSV_NoSave:
 ```
 ---
 
-## 🔹 RTOS 调试与性能分析
+## RTOS 调试与性能分析
 
 ### 调试工具与技术
 - 任务状态查看：
@@ -449,7 +443,7 @@ UBaseType_t uxHighWaterMark = uxTaskGetStackHighWaterMark(NULL);
 - 关键任务（如传感器采样）设高优先级，非关键任务（如显示更新）设低优先级。
 
 ---
-## 🔹 实践应用场景
+## 实践应用场景
 
 - 多任务协同：传感器数据采集 + 通信模块处理
 - 响应式控制：定时器 + 外部中断 + 优先级控制

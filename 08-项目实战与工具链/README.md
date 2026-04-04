@@ -1,8 +1,8 @@
-# 📦 第八层：项目实战与工具链
+# 第八层：项目实战与工具链
 
-## ✅ 工程管理
+## 工程管理
 
-### 🔹 Git 版本控制
+### Git 版本控制
 
 #### 1. **Git 分支策略**
 - **主干分支（main/master）**：  
@@ -47,8 +47,7 @@ git push origin v1.0.0
 git tag -l
 ```
 
-
-### 🔹 Makefile、CMake 构建工具
+### Makefile、CMake 构建工具
 
 #### 1. **Makefile 基础**
 - **简单示例**：  
@@ -113,8 +112,7 @@ git tag -l
   )
   ```
 
-
-### 🔹 Jenkins/GitHub Actions CI 流水线
+### Jenkins/GitHub Actions CI 流水线
 
 #### 1. **GitHub Actions 配置**
 - **编译与测试工作流**：  
@@ -206,10 +204,9 @@ git tag -l
   }
   ```
 
+## 项目实践
 
-## ✅ 项目实践
-
-### 🔹 嵌入式应用框架设计
+### 嵌入式应用框架设计
 
 #### 1. **分层架构**
 ```
@@ -258,8 +255,7 @@ project/
     └── Makefile    # Makefile
 ```
 
-
-### 🔹 通用 BSP 构建
+### 通用 BSP 构建
 
 #### 1. **设计原则**
 - **硬件无关性**：上层代码不直接访问硬件寄存器。  
@@ -362,8 +358,7 @@ void bsp_led_set(led_t led, led_state_t state) {
 }
 ```
 
-
-### 🔹 模块化驱动结构
+### 模块化驱动结构
 
 #### 1. **驱动分层**
 - **硬件层**：直接操作寄存器的低级驱动。  
@@ -458,8 +453,7 @@ const spi_interface_t* spi_get_interface(void) {
 }
 ```
 
-
-### 🔹 OTA 升级方案设计
+### OTA 升级方案设计
 
 #### 1. **双分区架构**
 ```
@@ -612,7 +606,6 @@ typedef struct {
 **验证安装**：  
 打开VS Code，点击左下角的 **PlatformIO Home** 图标，若能正常打开则安装成功。
 
-
 ### STM32CubeIDE
 
 **官网链接**：  
@@ -625,7 +618,6 @@ typedef struct {
 
 **验证安装**：  
 启动STM32CubeIDE，创建一个新的STM32项目，若能正常编译则安装成功。
-
 
 ### CLion
 
@@ -640,7 +632,6 @@ typedef struct {
 
 **验证安装**：  
 启动CLion，创建一个新的C/C++项目，选择CMake工具链，若能正常编译则安装成功。
-
 
 ## 2. **调试工具**
 
@@ -669,7 +660,6 @@ typedef struct {
 **验证安装**：  
 在终端中运行 `openocd --version`，若显示版本信息则安装成功。
 
-
 ### GDB
 
 **官网链接**：  
@@ -682,7 +672,6 @@ typedef struct {
 
 **验证安装**：  
 在终端中运行 `arm-none-eabi-gdb --version`，若显示版本信息则安装成功。
-
 
 ### ST-Link/V2
 
@@ -701,7 +690,6 @@ typedef struct {
 
 **验证安装**：  
 在终端中运行 `st-info --version`，若显示版本信息则安装成功。
-
 
 ## 3. **静态代码分析**
 
@@ -729,7 +717,6 @@ typedef struct {
 **验证安装**：  
 在终端中运行 `cppcheck --version`，若显示版本信息则安装成功。
 
-
 ### Clang-Tidy
 
 **官网链接**：  
@@ -753,7 +740,6 @@ typedef struct {
 **验证安装**：  
 在终端中运行 `clang-tidy --version`，若显示版本信息则安装成功。
 
-
 ### SonarQube
 
 **官网链接**：  
@@ -769,7 +755,6 @@ typedef struct {
 
 **验证安装**：  
 在浏览器中打开 [http://localhost:9000](http://localhost:9000)，若能看到SonarQube界面则安装成功。
-
 
 ## 4. **单元测试**
 
@@ -788,7 +773,6 @@ typedef struct {
 **验证安装**：  
 创建一个简单的测试文件，包含Unity头文件，若能正常编译则安装成功。
 
-
 ### CMock
 
 **官网链接**：  
@@ -803,7 +787,6 @@ typedef struct {
 
 **验证安装**：  
 创建一个简单的测试文件，包含CMock头文件，若能正常编译则安装成功。
-
 
 ### Google Test
 
@@ -828,8 +811,7 @@ typedef struct {
 **验证安装**：  
 创建一个简单的测试文件，包含Google Test头文件，若能正常编译则安装成功。
 
-
-## 📚 资源汇总
+## 资源汇总
 
 | **工具**         | **官网链接**                                  | **安装指南**                               |
 |------------------|---------------------------------------------|-------------------------------------------|

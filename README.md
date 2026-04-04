@@ -18,7 +18,6 @@
  <a href="#-如何参与贡献"></a>
 </p>
 
-
 ### 概述
 欢迎来到本项目，这里拥有**系统、全面**且贴近实战的2025年嵌入式软件开发学习路线和知识点总结。 
 涵盖包括**C语言、驱动开发、RTOS、嵌入式 Linux、网络通信与物联网、常用工具链**等嵌入式软件开发所需知识点 
@@ -372,8 +371,6 @@ void createArray() {
 - 内存编号是从0开始记录的，一般用十六进制数字表示
 - 可以利用指针变量保存地址
 
-
-
 #### 指针变量的定义和使用
 
 指针变量定义语法： `数据类型 * 变量名;`
@@ -415,8 +412,6 @@ int main() {
 
 总结3：对指针变量解引用，可以操作指针指向的内存
 
-
-
 #### 指针所占内存空间
 
 提问：指针也是种数据类型，那么这种数据类型占用多少内存空间？
@@ -453,7 +448,6 @@ int main() {
 
 **注意：** 空指针指向的内存是不可以访问的
 
-
 **示例1：空指针**
 
 ```cpp
@@ -471,8 +465,6 @@ int main() {
 	return 0;
 }
 ```
-
-
 
 **野指针**：指针变量指向非法的内存空间
 
@@ -495,9 +487,7 @@ int main() {
 
 总结：空指针和野指针都不是我们申请的空间，因此不要访问。
 
-
 #### const修饰指针
-
 
 const修饰指针有三种情况
 
@@ -505,7 +495,6 @@ const修饰指针有三种情况
 2. const修饰常量 --- 指针常量
 
 1. const既修饰指针，又修饰常量
-
 
 **示例：**
 
@@ -519,7 +508,6 @@ int main() {
 	const int * p1 = &a; 
 	p1 = &b; //正确
 	//*p1 = 100; 报错
-
 
 	//const修饰的是常量，指针指向不可以改，指针指向的值可以更改
 	int * const p2 = &a;
@@ -538,8 +526,6 @@ int main() {
 ```
 
 技巧：看const右侧紧跟着的是指针还是常量, 是指针就是常量指针，是常量就是指针常量
-
-
 
 #### 指针和数组
 核心概念 
@@ -572,8 +558,6 @@ int main() {
 	return 0;
 }
 ```
-
-
 
 #### 指针和函数
 
@@ -617,8 +601,6 @@ int main() {
 
 总结：如果不想修改实参，就用值传递，如果想修改实参，就用地址传递
 
-
-
 #### 指针、数组、函数
 - **函数指针声明**：`int (*fp)(int)` 表示指向返回 `int` 的函数的指针
 - **函数指针数组**：用于策略模式或注册多个处理函数
@@ -626,8 +608,6 @@ int main() {
 **案例描述：** 封装一个函数，利用冒泡排序，实现对整型数组的升序排序
 
 例如数组：int arr[10] = { 4,3,6,9,1,2,10,8,7,5 };
-
-
 
 **示例：**
 
@@ -1266,7 +1246,6 @@ void heap_sort(int arr[], int n) {
 - **内核位数**：8位（适合简单控制）、32位（主流）、64位（高性能应用）。
 - **片上外设**：集成ADC、DAC、PWM等功能模块，减少外部芯片依赖。
 
-
 ### 存储器：程序与数据的载体
 #### 1. **Flash存储器**
 - **功能**：存储程序代码（固件），掉电不丢失。
@@ -1287,7 +1266,6 @@ void heap_sort(int arr[], int n) {
 #### 3. **其他存储类型**
 - **EEPROM**：可擦写可编程只读存储器，适合存储少量关键参数（如设备ID）。
 - **FRAM**：铁电随机存储器，读写速度快、寿命长（10^12次擦写），用于数据记录。
-
 
 ### 外设接口：与外部世界的桥梁
 #### 1. **GPIO（通用输入输出）**
@@ -1316,7 +1294,6 @@ void heap_sort(int arr[], int n) {
  - 通过占空比控制输出电压平均值，用于电机调速、LED调光。 
  - 频率范围：几Hz~MHz（如舵机控制需50Hz PWM）。
 
-
 ### 传感器：感知物理世界的窗口
 #### 1. **常见类型**
 - **环境传感器**： 
@@ -1333,7 +1310,6 @@ void heap_sort(int arr[], int n) {
 #### 2. **接口方式**
 - **数字接口**：I2C（如SHT30）、SPI（如ADXL345）。 
 - **模拟接口**：输出电压值，需通过MCU的ADC转换（如模拟光照传感器）。
-
 
 ### 通信模块：连接万物的纽带
 #### 1. **短距离通信**
@@ -1358,7 +1334,6 @@ void heap_sort(int arr[], int n) {
  - 应用：汽车电子（如车身控制模块）、工业自动化。 
 - **Modbus**： 
  - 主从协议，支持RS-232/RS-485，广泛用于工业设备通信。
-
 
 ### 电源管理：续航与稳定性的保障
 #### 1. **电源转换**
@@ -1400,7 +1375,6 @@ void heap_sort(int arr[], int n) {
 - **智能手环**： 
  - 平时MCU处于休眠，加速度计检测运动状态。 
  - 定时唤醒GPS模块采集位置数据，通过BLE上传手机。
-
 
 ### 开发与调试工具
 #### 1. **硬件工具**
@@ -1493,7 +1467,6 @@ Reset_Handler:
  - `arm-none-eabi-ld`：链接器。 
  - `arm-none-eabi-objcopy`：格式转换工具（如生成.bin/.hex文件）。
 
-
 ### 链接脚本（.ld）深入解析
 #### 1. **核心作用**
 - **内存分区**：定义Flash、RAM等存储器区域的起始地址和大小。 
@@ -1544,7 +1517,6 @@ SECTIONS
  } > FLASH
  ```
 
-
 ### STM32存储器布局详解
 #### 1. **物理内存映射（以STM32F4为例）**
 ```
@@ -1586,7 +1558,6 @@ SECTIONS
  GPIOA_MODER |= 0x01; // PA0设为输出模式
  ```
 
-
 ### 编译与链接流程
 #### 1. **编译阶段**
 ```
@@ -1610,7 +1581,6 @@ SECTIONS
 #### 3. **烧录阶段**
 - 工具：ST-Link、J-Link、OpenOCD等。 
 - 流程：将.bin/.hex文件写入MCU的Flash起始地址（如0x08000000）。
-
 
 ### 常见问题与调试技巧
 #### 1. **链接错误**
@@ -1645,7 +1615,6 @@ SECTIONS
  ```ld
  .vectors : { KEEP(*(.vectors)) } > FLASH // 保留中断向量表
  ```
-
 
 ### 面试高频问题
 1. **.data和.bss的区别**： 
@@ -1779,7 +1748,7 @@ RAM (rwx) : ORIGIN = 0x20000000, LENGTH = 64K
 ---
 ---
 
-# 🟠 第三层：驱动开发与外设编程
+# 第三层：驱动开发与外设编程
 
 嵌入式驱动开发是连接硬件与上层应用的关键层，掌握寄存器操作、外设驱动编写及工具链使用是嵌入式工程师的核心技能。
 以下从底层原理到实践应用进行深度扩展：
@@ -1806,7 +1775,6 @@ RAM (rwx) : ORIGIN = 0x20000000, LENGTH = 64K
  // 同时设置PA5、PA6为输出（MODER[13:12]=01, MODER[11:10]=01）
  GPIOA_MODER = (GPIOA_MODER & ~(0xF << 10)) | (0x5 << 10);
  ```
-
 
 ### 通用外设驱动
 #### GPIO（通用输入输出）
@@ -1886,7 +1854,6 @@ RAM (rwx) : ORIGIN = 0x20000000, LENGTH = 64K
  HAL_ADC_ConfigChannel(&hadc1, &sConfig);
  ```
 
-
 ### 复杂外设支持
 #### DMA 控制器
 - **通道选择**： 
@@ -1928,7 +1895,6 @@ RAM (rwx) : ORIGIN = 0x20000000, LENGTH = 64K
  HAL_CAN_ConfigFilter(&hcan1, &sFilterConfig);
  ```
 
-
 ### 开发库 & 工具链
 #### STM32 HAL（硬件抽象层）
 - **HAL库架构**： 
@@ -1969,7 +1935,6 @@ RAM (rwx) : ORIGIN = 0x20000000, LENGTH = 64K
 - **中间件集成**： 
  - 支持FreeRTOS、LWIP、USB、File System等中间件一键配置。 
 
-
 ### 实战技巧与常见问题
 #### 1. **外设初始化流程**
 1. 使能外设时钟。 
@@ -2003,7 +1968,6 @@ void EXTI0_IRQHandler(void) {
  - 检测SPI/I2C总线波形，验证通信时序。 
  - 检测PWM波形，验证占空比和频率。 
 
-
 ### 面试高频问题
 1. **HAL与LL库的选择标准**： 
  - 快速开发选HAL，性能敏感场景选LL；需平衡开发效率与代码体积。 
@@ -2019,11 +1983,10 @@ void EXTI0_IRQHandler(void) {
  - 优点：释放CPU资源，实现高速数据传输。 
  - 缺点：配置复杂，占用总线带宽。
 
-
 ---
 ---
 
-# 🟣 第四层：实时操作系统（RTOS）
+# 第四层：实时操作系统（RTOS）
 
 本模块介绍嵌入式 RTOS（如 FreeRTOS）的基础知识、任务调度机制、资源管理方式以及在实际项目中的使用模式。
 
@@ -2042,7 +2005,6 @@ void EXTI0_IRQHandler(void) {
 - 可抢占内核（Preemptive Kernel）：
  - 高优先级任务可立即抢占低优先级任务。
  - 示例：飞行控制系统中，传感器数据采集任务优先级高于显示任务。
-
 
 ### 常见 RTOS
 - FreeRTOS（开源、广泛使用）
@@ -2065,7 +2027,6 @@ void EXTI0_IRQHandler(void) {
 | RT-Thread | | 物联网、智能家居 | 国产、组件丰富（如文件系统、GUI） |
 | μC/OS | 商用需授权 | 航空航天、医疗设备 | 支持安全认证（如 DO-178C）、稳定可靠 |
 | VxWorks | | 国防、通信、航天 | 商业闭源、高可靠性、实时性能强 |
-
 
 ---
 
@@ -2098,7 +2059,6 @@ xTaskCreate(vTaskFunction, "Task1", 256, NULL, 2, NULL);
  调用vTaskSuspend 
  或挂起API
 ```
-
 
 ### 任务优先级与调度算法
 - 抢占式调度：
@@ -2277,7 +2237,6 @@ if (xQueueReceive(xMessageQueue, &xReceivedMessage, portMAX_DELAY) == pdTRUE) {
 | 适用场景 | 简单数据传输（如 ADC 值） | 复杂命令传递（如协议解析、任务通信） |
 | 内存效率 | 每次传输都需拷贝数据 | 可传递指针，减少内存拷贝，效率更高 |
 
-
 ### 事件组（Event Group）
 - 类似标志位，可用于多任务同步
 ```c
@@ -2359,7 +2318,6 @@ if (pvBuffer == NULL) {
 }
 ```
 
-
 ### 临界区保护
 - 关中断：
 ```c
@@ -2392,7 +2350,6 @@ xSemaphoreGive(xMutex); // 释放锁
 | `configMAX_PRIORITIES` | 最大任务优先级数 | `5 ~ 32` |
 | `configMINIMAL_STACK_SIZE` | 最小任务栈大小（以字为单位） | `128`（STM32） |
 | `configSUPPORT_DYNAMIC_ALLOCATION` | 是否支持动态内存分配 | `1`（支持） |
-
 
 ### 移植步骤
 1. 提供 SysTick 定时器实现
@@ -2482,7 +2439,7 @@ UBaseType_t uxHighWaterMark = uxTaskGetStackHighWaterMark(NULL);
 ---
 ---
 
-# 🟢 第五层：嵌入式 Linux 开发基础
+# 第五层：嵌入式 Linux 开发基础
 
 嵌入式 Linux 是物联网、智能设备、工业控制等领域的核心技术之一。本层重点掌握从 Bootloader 到驱动的开发过程，理解 Linux 系统构成及其移植方法。
 
@@ -2866,7 +2823,6 @@ HAL_MPU_ConfigRegion(&MPU_InitStruct);
 
 用等效指令序列替换关键操作（如a+b替换为a-(-b)）。
 
-
 ---
 
 ### 权限隔离与防护
@@ -2922,7 +2878,6 @@ uint32_t SecureService_Call(uint32_t service_id, uint32_t param1, uint32_t param
 - 防止电量中断、写失败后的砖机风险
 - 可设置升级标志位（Upgrade Flag）
 
-
 ## 小结
 
 嵌入式 Linux 是从单片机迈向高性能系统开发的核心门槛，掌握其启动流程、设备树结构与驱动框架是后续学习内核裁剪、系统移植与 IoT 平台开发的基础。
@@ -2930,7 +2885,7 @@ uint32_t SecureService_Call(uint32_t service_id, uint32_t param1, uint32_t param
 ---
 ---
 
-# 🟣 第六层：网络通信与物联网协议（Network & IoT）
+# 第六层：网络通信与物联网协议（Network & IoT）
 
 本模块聚焦于嵌入式系统中的通信机制和物联网协议栈，涵盖串口通信、无线模块、MQTT 等协议到云平台对接，适用于 IoT 产品开发全流程。
 
@@ -3080,7 +3035,6 @@ HTTPS = HTTP + TLS/SSL 加密
 * **SHA-1**（160 位）
 * **SHA-256**（256 位）
 
-
 ### CoAP / LwM2M
 - 适合低功耗终端的简化协议，UDP 传输，可压缩
 - 用于 NB-IoT、LwIP 等网络栈中
@@ -3120,7 +3074,6 @@ int verify_cert(void *data, mbedtls_x509_crt *crt, int depth, uint32_t *flags) {
  return 0;
 }
 ```
-
 
 ---
 
@@ -3172,7 +3125,6 @@ bool ConstantTimeCompare(const uint8_t *a, const uint8_t *b, size_t len) {
 | 网络层 | IP, ICMP, ARP | 地址与路由 |
 | 链路层 | Ethernet, Wi-Fi, BLE | 硬件通信和数据帧传输 |
 
-
 #### TCP 与 UDP 区别
 
 | 特性 | TCP | UDP |
@@ -3181,7 +3133,6 @@ bool ConstantTimeCompare(const uint8_t *a, const uint8_t *b, size_t len) {
 | 是否可靠 | 是（有重传、确认） | 否（可能丢包） |
 | 适用场景 | Web、文件传输、SSH | 视频流、语音、广播 |
 | 开销 | 较大（握手、窗口等） | 较小（直接发送） |
-
 
 #### 嵌入式 TCP/IP 协议栈组件
 
@@ -3195,7 +3146,6 @@ bool ConstantTimeCompare(const uint8_t *a, const uint8_t *b, size_t len) {
  - 与 FreeRTOS 配套的 TCP/IP 协议栈
 - **Nut/Net、CycloneTCP**：其他常用协议栈
 
-
 #### 嵌入式 TCP/IP 通信流程（以 LwIP 为例）
 
 1. **初始化网络接口**：配置 IP、MAC、网关
@@ -3203,8 +3153,6 @@ bool ConstantTimeCompare(const uint8_t *a, const uint8_t *b, size_t len) {
 3. **建立连接 / 绑定端口**
 4. **接收/发送数据**：`recv()`, `send()`
 5. **关闭连接**：`close()`
-
-
 
 #### 常用 API 示例（LwIP BSD socket）
 
@@ -3235,8 +3183,6 @@ close(sock);
 * [TCP/IP Illustrated (Vol 1)](https://book.douban.com/subject/1088054/)
 
 ---
-
-
 
 ## 云平台接入 & OTA 实现
 
@@ -3361,8 +3307,6 @@ int main(void) {
 3. 理解 MQTT 协议与平台接入逻辑
 4. 实践 OTA 升级流程，构建远程维护能力
 
-
-
 ## 常见问题 FAQ
 
 | 问题 | 解答 |
@@ -3407,8 +3351,6 @@ GPIO_InitStruct.Alternate = GPIO_AF0_SWJ;
 HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 __HAL_AFIO_REMAP_SWJ_NOJTAG(); // 禁用JTAG，保留SWD
 ```
-
-
 
 ### GDB + OpenOCD 调试
 
@@ -3522,7 +3464,6 @@ HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
 #define configUSE_STATS_FORMATTING_FUNCTIONS 1 // 启用统计功能
 #define TRACE_BUFFER_SIZE 1024 // 跟踪缓冲区大小（事件数）
 ```
-
 
 ### SystemView 分析工具
 
@@ -3722,7 +3663,6 @@ git push origin v1.0.0
 git tag -l
 ```
 
-
 ### Makefile、CMake 构建工具
 
 #### 1. **Makefile 基础**
@@ -3787,7 +3727,6 @@ git tag -l
  DEPENDS ${PROJECT_NAME}.elf
  )
  ```
-
 
 ### Jenkins/GitHub Actions CI 流水线
 
@@ -3881,7 +3820,6 @@ git tag -l
  }
  ```
 
-
 ## 项目实践
 
 ### 嵌入式应用框架设计
@@ -3932,7 +3870,6 @@ project/
  cmake/ # CMake配置
  Makefile # Makefile
 ```
-
 
 ### 通用 BSP 构建
 
@@ -4037,7 +3974,6 @@ void bsp_led_set(led_t led, led_state_t state) {
 }
 ```
 
-
 ### 模块化驱动结构
 
 #### 1. **驱动分层**
@@ -4132,7 +4068,6 @@ const spi_interface_t* spi_get_interface(void) {
  return &spi_impl;
 }
 ```
-
 
 ### OTA 升级方案设计
 
@@ -4287,7 +4222,6 @@ typedef struct {
 **验证安装**： 
 打开VS Code，点击左下角的 **PlatformIO Home** 图标，若能正常打开则安装成功。
 
-
 ### STM32CubeIDE
 
 **官网链接**： 
@@ -4300,7 +4234,6 @@ typedef struct {
 
 **验证安装**： 
 启动STM32CubeIDE，创建一个新的STM32项目，若能正常编译则安装成功。
-
 
 ### CLion
 
@@ -4315,7 +4248,6 @@ typedef struct {
 
 **验证安装**： 
 启动CLion，创建一个新的C/C++项目，选择CMake工具链，若能正常编译则安装成功。
-
 
 ## 2. **调试工具**
 
@@ -4344,7 +4276,6 @@ typedef struct {
 **验证安装**： 
 在终端中运行 `openocd --version`，若显示版本信息则安装成功。
 
-
 ### GDB
 
 **官网链接**： 
@@ -4357,7 +4288,6 @@ typedef struct {
 
 **验证安装**： 
 在终端中运行 `arm-none-eabi-gdb --version`，若显示版本信息则安装成功。
-
 
 ### ST-Link/V2
 
@@ -4376,7 +4306,6 @@ typedef struct {
 
 **验证安装**： 
 在终端中运行 `st-info --version`，若显示版本信息则安装成功。
-
 
 ## 3. **静态代码分析**
 
@@ -4404,7 +4333,6 @@ typedef struct {
 **验证安装**： 
 在终端中运行 `cppcheck --version`，若显示版本信息则安装成功。
 
-
 ### Clang-Tidy
 
 **官网链接**： 
@@ -4428,7 +4356,6 @@ typedef struct {
 **验证安装**： 
 在终端中运行 `clang-tidy --version`，若显示版本信息则安装成功。
 
-
 ### SonarQube
 
 **官网链接**： 
@@ -4444,7 +4371,6 @@ typedef struct {
 
 **验证安装**： 
 在浏览器中打开 [http://localhost:9000](http://localhost:9000)，若能看到SonarQube界面则安装成功。
-
 
 ## 4. **单元测试**
 
@@ -4463,7 +4389,6 @@ typedef struct {
 **验证安装**： 
 创建一个简单的测试文件，包含Unity头文件，若能正常编译则安装成功。
 
-
 ### CMock
 
 **官网链接**： 
@@ -4478,7 +4403,6 @@ typedef struct {
 
 **验证安装**： 
 创建一个简单的测试文件，包含CMock头文件，若能正常编译则安装成功。
-
 
 ### Google Test
 
@@ -4502,7 +4426,6 @@ typedef struct {
 
 **验证安装**： 
 创建一个简单的测试文件，包含Google Test头文件，若能正常编译则安装成功。
-
 
 ## 资源汇总
 
@@ -4595,7 +4518,6 @@ typedef struct {
 | TinyMLNet | 0.02M | 0.2MB | 68.2% | 5ms |
 | EfficientNet-Lite0 | 4M | 12MB | 75.0% | 600ms |
 
-
 ### STM32 AI 开发套件
 
 #### 1. **硬件平台**
@@ -4617,7 +4539,6 @@ typedef struct {
 - **模型优化**：使用STM32Cube.AI的量化工具将模型压缩至8位或更少。 
 - **内存管理**：优化模型和中间数据的内存布局，减少RAM占用。 
 
-
 ### 模型量化与部署
 
 #### 1. **量化技术**
@@ -4632,7 +4553,6 @@ typedef struct {
 | 计算能力有限 | 优化算子实现，利用硬件加速指令 |
 | 功耗敏感 | 采用低功耗模式，推理过程中动态调整频率 |
 | 模型更新 | 设计OTA机制，支持模型动态更新 |
-
 
 ### AI + 外设驱动融合案例
 
@@ -4678,7 +4598,6 @@ typedef struct {
  2. 使用AI模型分析频谱特征，识别潜在故障。 
  3. 通过BLE将结果发送至云端。 
 
-
 ## 安全性
 
 ### 安全启动（Secure Boot）
@@ -4716,7 +4635,6 @@ typedef struct {
  return ecdsa_verify(public_key, firmware, size, signature);
  }
  ```
-
 
 ### TPM 安全芯片接入
 
@@ -4776,7 +4694,6 @@ typedef struct {
 - **安全通信**：TPM生成和存储TLS密钥，保护通信数据。 
 - **设备身份认证**：基于TPM的唯一密钥实现设备身份识别。 `
 
-
 ## 实战案例
 
 ### 1. **工业设备预测性维护**
@@ -4795,7 +4712,6 @@ typedef struct {
  - 通过安全启动确保固件未被篡改。 
  - 使用TPM存储用户认证密钥。 
 
-
 ## 参考资源
 
 1. **AI on MCU**： 
@@ -4811,7 +4727,6 @@ typedef struct {
 3. **实战案例**： 
  - [STMicroelectronics AI Demo](https://www.st.com/en/evaluation-tools/stm32ai-discovery.html) 
  - [ESP32 TinyML Examples](https://github.com/tensorflow/tflite-micro-arduino-examples) 
-
 
 ---
 ---
