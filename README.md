@@ -1,5 +1,5 @@
 
-<h1 align="center"> 嵌入式软件开发全景笔记 
+<h1 align="center"> 嵌入式软件开发笔记 
 	 EmbeddedSoftwareLearn</h1>
 <p align="center">
  <strong>嵌入式软件学习路线图 · C语言 / RTOS / Linux驱动 · 从入门到进阶</strong>
