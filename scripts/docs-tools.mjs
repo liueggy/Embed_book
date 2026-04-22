@@ -404,15 +404,28 @@ function listSectionPages(section) {
 }
 
 export function buildNav() {
-  const studyItems = DOC_SECTIONS.slice(0, 10).map((section) => ({
-    text: section.text,
-    link: getEntryRoute(section)
-  }));
+  const coreSections = DOC_SECTIONS.slice(0, 8);
+  const topicSections = DOC_SECTIONS.filter((s) =>
+    ['09-2025_AI_on_MCU', '嵌入式图形 Qt 开发'].includes(s.dir)
+  );
 
   return [
     { text: '首页', link: '/' },
     { text: '学习地图', link: '/study-map' },
-    { text: '专题文档', items: studyItems },
+    {
+      text: '核心课程',
+      items: coreSections.map((section) => ({
+        text: section.text,
+        link: getEntryRoute(section)
+      }))
+    },
+    {
+      text: '专题方向',
+      items: topicSections.map((section) => ({
+        text: section.text,
+        link: getEntryRoute(section)
+      }))
+    },
     {
       text: '面试与资源',
       items: [
@@ -458,8 +471,9 @@ export function buildSidebar() {
     const entryRoute = getEntryRoute(section);
     const items = [{ text: '章节导读', link: entryRoute }];
 
-    if (section.dir === '面试题与面经') {
-      items.push(...listSectionPages(section));
+    const subPages = listSectionPages(section);
+    if (subPages.length > 0) {
+      items.push(...subPages);
     }
 
     if (section.dir === 'books') {
@@ -469,6 +483,7 @@ export function buildSidebar() {
     sidebar[entryRoute] = [
       {
         text: section.text,
+        collapsed: subPages.length > 6,
         items
       }
     ];

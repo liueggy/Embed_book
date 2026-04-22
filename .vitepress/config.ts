@@ -2,6 +2,11 @@ import { defineConfig } from 'vitepress';
 import { buildNav, buildRewrites, buildSidebar } from '../scripts/docs-tools.mjs';
 
 export default defineConfig({
+  vite: {
+    ssr: {
+      noExternal: ['element-plus']
+    }
+  },
   lang: 'zh-CN',
   title: 'Embed Book',
   description: '嵌入式软件开发全景知识库，覆盖 C 语言、驱动开发、RTOS、Embedded Linux、IoT 与 AI on MCU。',
