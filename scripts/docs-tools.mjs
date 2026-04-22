@@ -229,13 +229,6 @@ function resolveLocalTarget(fromFile, rawPath) {
     ? path.join(repoRoot, decoded.slice(1))
     : path.resolve(path.dirname(fromFile), decoded);
 
-  const publicBase = isAbsolute
-    ? path.join(repoRoot, 'public', decoded.slice(1))
-    : null;
-  if (publicBase && fs.existsSync(publicBase) && fs.statSync(publicBase).isFile()) {
-    return rawPath;
-  }
-
   const exactFile = absoluteBase;
   if (fs.existsSync(exactFile) && fs.statSync(exactFile).isFile()) {
     if (README_CANDIDATES.includes(path.basename(exactFile))) {
@@ -268,6 +261,13 @@ function resolveLocalTarget(fromFile, rawPath) {
   return null;
 }
 
+function isPublicAsset(rawPathPart) {
+  const decoded = decodeURI(rawPathPart);
+  if (!decoded.startsWith('/')) return false;
+  const publicPath = path.join(repoRoot, 'public', decoded.slice(1));
+  return fs.existsSync(publicPath) && fs.statSync(publicPath).isFile();
+}
+
 function normalizeLink(fromFile, rawTarget) {
   const { pathPart, suffix } = splitLinkTarget(rawTarget);
   if (!pathPart || isExternalLink(pathPart) || pathPart.startsWith('#')) {
@@ -275,6 +275,11 @@ function normalizeLink(fromFile, rawTarget) {
   }
 
   const { pathPart: rawPathPart, hashPart } = splitHash(pathPart);
+
+  if (isPublicAsset(rawPathPart)) {
+    return { changed: false, nextTarget: rawTarget, broken: false };
+  }
+
   const resolvedPath = resolveLocalTarget(fromFile, rawPathPart);
   if (!resolvedPath) {
     return { changed: false, nextTarget: rawTarget, broken: true };
