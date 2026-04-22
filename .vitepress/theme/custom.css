@@ -42,12 +42,18 @@
   margin-top: 20px;
   border: 1px solid rgba(148, 163, 184, 0.22);
   border-radius: 18px;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82) 0%, rgba(248, 250, 252, 0.88) 100%),
+    url('/hero-bg.png') center / cover no-repeat;
   box-shadow: none;
+  position: relative;
+  overflow: hidden;
 }
 
 .dark .VPHome .VPHero {
-  background: linear-gradient(180deg, #111827 0%, #0f172a 100%);
+  background:
+    linear-gradient(180deg, rgba(17, 24, 39, 0.85) 0%, rgba(15, 23, 42, 0.9) 100%),
+    url('/hero-bg.png') center / cover no-repeat;
   border-color: rgba(148, 163, 184, 0.18);
 }
 
