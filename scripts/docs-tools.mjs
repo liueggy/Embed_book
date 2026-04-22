@@ -229,6 +229,13 @@ function resolveLocalTarget(fromFile, rawPath) {
     ? path.join(repoRoot, decoded.slice(1))
     : path.resolve(path.dirname(fromFile), decoded);
 
+  const publicBase = isAbsolute
+    ? path.join(repoRoot, 'public', decoded.slice(1))
+    : null;
+  if (publicBase && fs.existsSync(publicBase) && fs.statSync(publicBase).isFile()) {
+    return rawPath;
+  }
+
   const exactFile = absoluteBase;
   if (fs.existsSync(exactFile) && fs.statSync(exactFile).isFile()) {
     if (README_CANDIDATES.includes(path.basename(exactFile))) {

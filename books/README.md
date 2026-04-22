@@ -24,9 +24,9 @@
 
 ## 仓库内 PDF 资料
 
-- [Arm64 指令集快速查找表](./Arm64%20%E6%8C%87%E4%BB%A4%E9%9B%86%E5%BF%AB%E9%80%9F%E6%9F%A5%E6%89%BE%E8%A1%A8%28ARMv8%20A64%20Quick%20Reference%29.pdf)
-- [Linux 初学者入门优秀教程](./Linux%E5%88%9D%E5%AD%A6%E8%80%85%E5%85%A5%E9%97%A8%E4%BC%98%E7%A7%80%E6%95%99%E7%A8%8B.pdf)
-- [Shell 命令行操作](./Shell%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C.pdf)
+- [Arm64 指令集快速查找表](/pdfs/books/Arm64%20%E6%8C%87%E4%BB%A4%E9%9B%86%E5%BF%AB%E9%80%9F%E6%9F%A5%E6%89%BE%E8%A1%A8%28ARMv8%20A64%20Quick%20Reference%29.pdf)
+- [Linux 初学者入门优秀教程](/pdfs/books/Linux%E5%88%9D%E5%AD%A6%E8%80%85%E5%85%A5%E9%97%A8%E4%BC%98%E7%A7%80%E6%95%99%E7%A8%8B.pdf)
+- [Shell 命令行操作](/pdfs/books/Shell%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C.pdf)
 
 ## 百度网盘资源
 

@@ -16,9 +16,9 @@
 
 ## 附加资料
 
-- [嵌入式资料整合第二辑 PDF](./%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%B5%84%E6%96%99%E6%95%B4%E5%90%88%E7%AC%AC%E4%BA%8C%E8%BE%91.pdf)
-- [ARM 嵌入式系统基础教程 PDF](./ARM%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B.PDF)
-- [Linux BSP 工程师面试常问问题汇集 PDF](./Linux%20BSP%E5%B7%A5%E7%A8%8B%E5%B8%88%E9%9D%A2%E8%AF%95%E5%B8%B8%E9%97%AE%E9%97%AE%E9%A2%98%E6%B1%87%E9%9B%86..pdf)
+- [嵌入式资料整合第二辑 PDF](/pdfs/interview/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%B5%84%E6%96%99%E6%95%B4%E5%90%88%E7%AC%AC%E4%BA%8C%E8%BE%91.pdf)
+- [ARM 嵌入式系统基础教程 PDF](/pdfs/interview/ARM%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B.PDF)
+- [Linux BSP 工程师面试常问问题汇集 PDF](/pdfs/interview/Linux%20BSP%E5%B7%A5%E7%A8%8B%E5%B8%88%E9%9D%A2%E8%AF%95%E5%B8%B8%E9%97%AE%E9%97%AE%E9%A2%98%E6%B1%87%E9%9B%86..pdf)
 
 ## 百度网盘资源
 
